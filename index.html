@@ -3,118 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baby Shower & Gender Reveal Invitation!</title>
+    <title>Aisha & Suhail's Baby Shower & Gender Reveal</title>
+    
+    <!-- Google Fonts for Elegant Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* Modern Reset & Fonts */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
-            background-color: #FAF5F0;
-            color: #4A4A4A;
+            background-color: #FDF6F0; /* Warm blush parchment background */
+            color: #5A4A42;
             line-height: 1.6;
         }
 
-        /* Hero Header */
+        /* Header / Banner */
         header {
-            background: linear-gradient(135deg, #FFD1DC 0%, #B2EBF2 100%);
+            background: linear-gradient(180deg, #F9EBEA 0%, #FDF6F0 100%);
             text-align: center;
-            padding: 4rem 1rem 3rem;
-            color: #4A4A4A;
+            padding: 3rem 1rem 2rem;
+            border-bottom: 1px solid #E8D8CE;
+        }
+
+        .subtitle-top {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            color: #8C6D58;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
         }
 
         header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            color: #333;
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #6E473B;
+            font-weight: 600;
         }
 
-        header p {
-            font-size: 1.3rem;
-            opacity: 0.9;
+        .script-title {
+            font-family: 'Alex Brush', cursive;
+            font-size: 4rem;
+            color: #B87D70;
+            margin: -0.5rem 0;
         }
 
-        /* Container Layout */
+        header p.tagline {
+            font-size: 0.95rem;
+            color: #7A6356;
+            max-width: 600px;
+            margin: 1rem auto 0;
+            font-weight: 300;
+        }
+
+        /* Main Container */
         .container {
-            max-width: 900px;
-            margin: -2rem auto 3rem;
+            max-width: 800px;
+            margin: 2rem auto 3rem;
             padding: 0 1rem;
         }
 
         .card {
-            background: white;
+            background: #FFFFFF;
+            border: 1px solid #EAE0D8;
             border-radius: 16px;
             padding: 2rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(110, 71, 59, 0.05);
         }
 
         h2 {
-            color: #555;
+            font-family: 'Cinzel', serif;
+            color: #6E473B;
             text-align: center;
             margin-bottom: 1.5rem;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
         }
 
-        /* Event Details Section */
+        /* Hero Photo Section */
+        .hero-photo-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero-photo-card {
+            max-width: 450px;
+            margin: 0 auto;
+            border-radius: 150px 150px 16px 16px; /* Elegant arched photo style */
+            overflow: hidden;
+            border: 4px solid #F3E5DC;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+
+        .hero-photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Event Details */
         .event-details {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            gap: 1.2rem;
             text-align: center;
         }
 
         .detail-item {
-            background: #FDF9F3;
+            background: #FAF2EC;
             padding: 1.2rem;
             border-radius: 12px;
-            border: 1px dashed #E0D3C1;
+            border: 1px solid #EADCD3;
         }
 
         .detail-item h3 {
-            color: #777;
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
+            font-family: 'Cinzel', serif;
+            color: #8C6D58;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+            letter-spacing: 1px;
         }
 
         .detail-item p {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Photo Gallery */
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
-
-        .photo-card {
-            height: 220px;
-            border-radius: 12px;
-            overflow: hidden;
-            background-color: #EEE;
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .photo-card img:hover {
-            transform: scale(1.05);
+            font-weight: 600;
+            font-size: 1rem;
+            color: #5A4A42;
         }
 
         /* Gender Vote Section */
         .vote-options {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             margin-bottom: 1.5rem;
         }
@@ -122,117 +149,133 @@
         .vote-btn {
             flex: 1;
             max-width: 200px;
-            padding: 1.2rem;
+            padding: 1rem;
             border: none;
             border-radius: 12px;
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .vote-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .btn-boy {
-            background-color: #B2EBF2;
-            color: #006064;
+            background-color: #D4E6F1;
+            color: #2471A3;
         }
 
         .btn-girl {
-            background-color: #FFD1DC;
-            color: #880E4F;
+            background-color: #FADBD8;
+            color: #78281F;
         }
 
         .vote-results {
-            background: #F8F9FA;
+            background: #FAF2EC;
             border-radius: 12px;
             padding: 1rem;
+            border: 1px solid #EADCD3;
         }
 
         .progress-bar-container {
             display: flex;
-            height: 24px;
-            background: #DDD;
-            border-radius: 12px;
+            height: 20px;
+            background: #E5D5C8;
+            border-radius: 10px;
             overflow: hidden;
             margin-top: 10px;
         }
 
         .bar-boy {
-            background: #4DD0E1;
+            background: #85C1E9;
             width: 50%;
             transition: width 0.5s ease;
         }
 
         .bar-girl {
-            background: #FF80AB;
+            background: #F1948A;
             width: 50%;
             transition: width 0.5s ease;
         }
 
         /* RSVP Form */
         .rsvp-stats {
-            background: #E8F5E9;
-            color: #2E7D32;
+            background: #E8F8F5;
+            color: #117864;
             text-align: center;
             padding: 1rem;
             border-radius: 12px;
             margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         form label {
             display: block;
             margin-top: 1rem;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.9rem;
             margin-bottom: 0.3rem;
+            color: #6E473B;
         }
 
         form input, form select {
             width: 100%;
             padding: 0.8rem;
-            border: 1px solid #CCC;
+            border: 1px solid #D5C4B7;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            background-color: #FCF9F6;
         }
 
         form button {
             width: 100%;
             margin-top: 1.5rem;
             padding: 1rem;
-            background: #7E57C2;
+            background: #8C6D58;
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             transition: background 0.3s;
         }
 
         form button:hover {
-            background: #5E35B1;
+            background: #6E473B;
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            color: #888;
+            color: #8C6D58;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Baby Shower & Gender Reveal! 🍼</h1>
-        <p>Join us to celebrate our new arrival!</p>
+        <div class="subtitle-top">A Little Du'a, A Lot of Love & A Whole New Chapter</div>
+        <h1>Aisha & Suhail's</h1>
+        <div class="script-title">Baby Shower</div>
+        <div class="subtitle-top" style="letter-spacing: 4px; margin-top: 5px;">GENDER REVEAL</div>
+        <p class="tagline">Join us as we celebrate our little blessing on the way. Whether it's a he or a she, we can't wait to share this special moment with you!</p>
     </header>
 
     <div class="container">
+
+        <!-- FEATURED PHOTO -->
+        <div class="hero-photo-container">
+            <div class="hero-photo-card">
+                <!-- Replace src below with the link to your uploaded picture -->
+                <img src="https://picsum.photos/600/800?random=1" alt="Aisha and Suhail">
+            </div>
+        </div>
 
         <!-- EVENT DETAILS -->
         <div class="card">
@@ -240,48 +283,31 @@
             <div class="event-details">
                 <div class="detail-item">
                     <h3>📅 Date</h3>
-                    <p>Saturday, May 16, 2026</p>
+                    <p>Saturday<br>19th September</p>
                 </div>
                 <div class="detail-item">
                     <h3>⏰ Time</h3>
-                    <p>2:00 PM – 6:00 PM</p>
+                    <p>2:00 PM</p>
                 </div>
                 <div class="detail-item">
                     <h3>📍 Location</h3>
-                    <p>123 Celebration Lane<br>Garden Suite</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- PHOTO GALLERY -->
-        <div class="card">
-            <h2>Our Journey So Far</h2>
-            <div class="photo-grid">
-                <!-- Replace src links below with your actual picture URLs -->
-                <div class="photo-card">
-                    <img src="https://picsum.photos/400/300?random=1" alt="Mom & Dad Photo 1">
-                </div>
-                <div class="photo-card">
-                    <img src="https://picsum.photos/400/300?random=2" alt="Mom & Dad Photo 2">
-                </div>
-                <div class="photo-card">
-                    <img src="https://picsum.photos/400/300?random=3" alt="Mom & Dad Photo 3">
+                    <p>3 Lightwood Road,<br>Stoke on Trent,<br>ST5 7TT</p>
                 </div>
             </div>
         </div>
 
         <!-- GENDER VOTE SECTION -->
         <div class="card">
-            <h2>Cast Your Vote! 💙💖</h2>
-            <p style="text-align: center; margin-bottom: 1.5rem;">What do you think baby will be?</p>
+            <h2>Boy or Girl? 💙💖</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem; font-size: 0.95rem;">Cast your vote before the reveal!</p>
             
             <div class="vote-options">
-                <button class="vote-btn btn-boy" onclick="castVote('boy')">Boy 👦</button>
-                <button class="vote-btn btn-girl" onclick="castVote('girl')">Girl 👧</button>
+                <button class="vote-btn btn-boy" onclick="castVote('boy')">Team Boy 👦</button>
+                <button class="vote-btn btn-girl" onclick="castVote('girl')">Team Girl 👧</button>
             </div>
 
             <div class="vote-results">
-                <div style="display: flex; justify-content: space-between; font-weight: bold;">
+                <div style="display: flex; justify-content: space-between; font-weight: 600; font-size: 0.9rem;">
                     <span id="boyCountText">Boy: 0 (0%)</span>
                     <span id="girlCountText">Girl: 0 (0%)</span>
                 </div>
@@ -297,7 +323,7 @@
             <h2>RSVP Here</h2>
 
             <div class="rsvp-stats">
-                🎉 Total Confirmed Guests Attending: <span id="totalGuestsCount">0</span>
+                🎉 Confirmed Guests Attending: <span id="totalGuestsCount">0</span>
             </div>
 
             <form id="rsvpForm">
@@ -320,11 +346,11 @@
     </div>
 
     <footer>
-        <p>We can't wait to celebrate with you!</p>
+        <p>Aisha & Suhail • We can't wait to celebrate with you!</p>
     </footer>
 
     <script>
-        // --- VOTE COUNTER LOGIC ---
+        // Vote logic
         let boyVotes = parseInt(localStorage.getItem('boyVotes')) || 0;
         let girlVotes = parseInt(localStorage.getItem('girlVotes')) || 0;
 
@@ -352,10 +378,9 @@
             alert('Thank you for voting!');
         }
 
-        // Initialize vote UI on load
         updateVoteUI();
 
-        // --- RSVP LOGIC ---
+        // RSVP logic
         let totalAttendingGuests = parseInt(localStorage.getItem('totalGuests')) || 0;
         document.getElementById('totalGuestsCount').innerText = totalAttendingGuests;
 
@@ -367,7 +392,6 @@
             const additionalGuests = parseInt(document.getElementById('guestCount').value) || 0;
 
             if (status === 'yes') {
-                // Main guest (1) + additional guests
                 const newGuests = 1 + additionalGuests;
                 totalAttendingGuests += newGuests;
                 localStorage.setItem('totalGuests', totalAttendingGuests);
@@ -382,4 +406,5 @@
         });
     </script>
 </body>
+</html>
 </html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower & Gender Reveal Invitation!</title>
+    <style>
+        /* Modern Reset & Fonts */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #FAF5F0;
+            color: #4A4A4A;
+            line-height: 1.6;
+        }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(135deg, #FFD1DC 0%, #B2EBF2 100%);
+            text-align: center;
+            padding: 4rem 1rem 3rem;
+            color: #4A4A4A;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 900px;
+            margin: -2rem auto 3rem;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #555;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        /* Event Details Section */
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .detail-item {
+            background: #FDF9F3;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px dashed #E0D3C1;
+        }
+
+        .detail-item h3 {
+            color: #777;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-item p {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Photo Gallery */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .photo-card {
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #EEE;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Gender Vote Section */
+        .vote-options {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .vote-btn {
+            flex: 1;
+            max-width: 200px;
+            padding: 1.2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .vote-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-boy {
+            background-color: #B2EBF2;
+            color: #006064;
+        }
+
+        .btn-girl {
+            background-color: #FFD1DC;
+            color: #880E4F;
+        }
+
+        .vote-results {
+            background: #F8F9FA;
+            border-radius: 12px;
+            padding: 1rem;
+        }
+
+        .progress-bar-container {
+            display: flex;
+            height: 24px;
+            background: #DDD;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .bar-boy {
+            background: #4DD0E1;
+            width: 50%;
+            transition: width 0.5s ease;
+        }
+
+        .bar-girl {
+            background: #FF80AB;
+            width: 50%;
+            transition: width 0.5s ease;
+        }
+
+        /* RSVP Form */
+        .rsvp-stats {
+            background: #E8F5E9;
+            color: #2E7D32;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        form label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #CCC;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        form button {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #7E57C2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #5E35B1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Baby Shower & Gender Reveal! 🍼</h1>
+        <p>Join us to celebrate our new arrival!</p>
+    </header>
+
+    <div class="container">
+
+        <!-- EVENT DETAILS -->
+        <div class="card">
+            <h2>Event Details</h2>
+            <div class="event-details">
+                <div class="detail-item">
+                    <h3>📅 Date</h3>
+                    <p>Saturday, May 16, 2026</p>
+                </div>
+                <div class="detail-item">
+                    <h3>⏰ Time</h3>
+                    <p>2:00 PM – 6:00 PM</p>
+                </div>
+                <div class="detail-item">
+                    <h3>📍 Location</h3>
+                    <p>123 Celebration Lane<br>Garden Suite</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHOTO GALLERY -->
+        <div class="card">
+            <h2>Our Journey So Far</h2>
+            <div class="photo-grid">
+                <!-- Replace src links below with your actual picture URLs -->
+                <div class="photo-card">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Mom & Dad Photo 1">
+                </div>
+                <div class="photo-card">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Mom & Dad Photo 2">
+                </div>
+                <div class="photo-card">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Mom & Dad Photo 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- GENDER VOTE SECTION -->
+        <div class="card">
+            <h2>Cast Your Vote! 💙💖</h2>
+            <p style="text-align: center; margin-bottom: 1.5rem;">What do you think baby will be?</p>
+            
+            <div class="vote-options">
+                <button class="vote-btn btn-boy" onclick="castVote('boy')">Boy 👦</button>
+                <button class="vote-btn btn-girl" onclick="castVote('girl')">Girl 👧</button>
+            </div>
+
+            <div class="vote-results">
+                <div style="display: flex; justify-content: space-between; font-weight: bold;">
+                    <span id="boyCountText">Boy: 0 (0%)</span>
+                    <span id="girlCountText">Girl: 0 (0%)</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="barBoy" class="bar-boy"></div>
+                    <div id="barGirl" class="bar-girl"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RSVP SECTION -->
+        <div class="card">
+            <h2>RSVP Here</h2>
+
+            <div class="rsvp-stats">
+                🎉 Total Confirmed Guests Attending: <span id="totalGuestsCount">0</span>
+            </div>
+
+            <form id="rsvpForm">
+                <label for="guestName">Your Full Name</label>
+                <input type="text" id="guestName" required placeholder="e.g. Jane Doe">
+
+                <label for="attendingStatus">Will you be joining us?</label>
+                <select id="attendingStatus" required>
+                    <option value="yes">Joyfully Accepts</option>
+                    <option value="no">Regretfully Declines</option>
+                </select>
+
+                <label for="guestCount">Number of additional guests attending with you:</label>
+                <input type="number" id="guestCount" min="0" max="10" value="0">
+
+                <button type="submit">Submit RSVP</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>We can't wait to celebrate with you!</p>
+    </footer>
+
+    <script>
+        // --- VOTE COUNTER LOGIC ---
+        let boyVotes = parseInt(localStorage.getItem('boyVotes')) || 0;
+        let girlVotes = parseInt(localStorage.getItem('girlVotes')) || 0;
+
+        function updateVoteUI() {
+            const total = boyVotes + girlVotes;
+            const boyPct = total > 0 ? Math.round((boyVotes / total) * 100) : 50;
+            const girlPct = total > 0 ? Math.round((girlVotes / total) * 100) : 50;
+
+            document.getElementById('boyCountText').innerText = `Boy: ${boyVotes} (${boyPct}%)`;
+            document.getElementById('girlCountText').innerText = `Girl: ${girlVotes} (${girlPct}%)`;
+
+            document.getElementById('barBoy').style.width = boyPct + '%';
+            document.getElementById('barGirl').style.width = girlPct + '%';
+        }
+
+        function castVote(choice) {
+            if (choice === 'boy') {
+                boyVotes++;
+                localStorage.setItem('boyVotes', boyVotes);
+            } else if (choice === 'girl') {
+                girlVotes++;
+                localStorage.setItem('girlVotes', girlVotes);
+            }
+            updateVoteUI();
+            alert('Thank you for voting!');
+        }
+
+        // Initialize vote UI on load
+        updateVoteUI();
+
+        // --- RSVP LOGIC ---
+        let totalAttendingGuests = parseInt(localStorage.getItem('totalGuests')) || 0;
+        document.getElementById('totalGuestsCount').innerText = totalAttendingGuests;
+
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('guestName').value;
+            const status = document.getElementById('attendingStatus').value;
+            const additionalGuests = parseInt(document.getElementById('guestCount').value) || 0;
+
+            if (status === 'yes') {
+                // Main guest (1) + additional guests
+                const newGuests = 1 + additionalGuests;
+                totalAttendingGuests += newGuests;
+                localStorage.setItem('totalGuests', totalAttendingGuests);
+                document.getElementById('totalGuestsCount').innerText = totalAttendingGuests;
+
+                alert(`Thank you ${name}! We've reserved ${newGuests} spot(s) for you.`);
+            } else {
+                alert(`Thank you for letting us know, ${name}. You will be missed!`);
+            }
+
+            this.reset();
+        });
+    </script>
+</body>
+</html>
